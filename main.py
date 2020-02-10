@@ -49,17 +49,39 @@ class InstaBot:
             .click()
         sleep(4)
 
+        # THREE TAGS PER COMMENT
+        
         # adds all tags as individual comments on the post
-        for tag in taglist:
+        iternum = len(taglist)//3 * 3
+        
+        for i in range(0, iternum, 3):
+            tempcomment = ''
             self.driver.find_element_by_xpath('/html/body/div[4]/div[2]/div/article/div[2]/section[3]/div/form/textarea')\
                 .click()
             sleep(2)
+            tempcomment = taglist[i] + " " + taglist[i+1] + " " + taglist[i+2]
             self.driver.find_element_by_xpath('/html/body/div[4]/div[2]/div/article/div[2]/section[3]/div/form/textarea')\
-                .send_keys(tag)
+                .send_keys(tempcomment)
             sleep(2)
             self.driver.find_element_by_xpath('//button[@type="submit"]')\
                 .click()
-            sleep(4)
+            sleep(5)
+
+        # ONE TAG PER COMMENT
+
+        # adds all tags as individual comments on the post
+        # for tag in taglist:
+        #     self.driver.find_element_by_xpath('/html/body/div[4]/div[2]/div/article/div[2]/section[3]/div/form/textarea')\
+        #         .click()
+        #     sleep(2)
+        #     self.driver.find_element_by_xpath('/html/body/div[4]/div[2]/div/article/div[2]/section[3]/div/form/textarea')\
+        #         .send_keys(tag)
+        #     sleep(2)
+        #     self.driver.find_element_by_xpath('//button[@type="submit"]')\
+        #         .click()
+        #     sleep(4)
+
+        
 
 # initialise instance of bot object
 my_bot = InstaBot(username, pw, accountname, post, taglist)
