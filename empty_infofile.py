@@ -1558,7 +1558,7 @@ taglist = [('@pavlinap', '@peris_sty'),
 ('@andreas_michael10', '@ai_sixtir_'),
 ('@xaris_erac', '@stefanos98msn'),
 ('@markellakalli', '@andreaswp6')]
-username = 'finiotis98'
-pw = 'Nikolas180598Kofteros1851998'
-accountname = 'hookaddiction'
-post = 'p/CD_sGFFAth4'
+username = ''
+pw = ''
+accountname = ''
+post = ''
